@@ -65,6 +65,7 @@ abstract public class Oculus extends MetaProducts { //Generalización
             System.out.println("Info: Right Controller no assigned");
         }
     }
+
     public void printSingleAssignedController() {
         if (ControllerSingle != null) {
             System.out.println(ControllerSingle.getCommercialName() + " " + ControllerSingle.getSerialNumber());
@@ -84,6 +85,7 @@ abstract public class Oculus extends MetaProducts { //Generalización
     public String getInstalledApk() {
         return installedApk;
     }
+
     public void setInstalledApk(String path) {
         rebootDevice();
         setRootDevice(true);
@@ -91,10 +93,10 @@ abstract public class Oculus extends MetaProducts { //Generalización
         System.out.println("Info: APK: " + installedApk + " installed successfully!");
     }
 
-    public void uninstallApk(){
+    public void uninstallApk() {
         if (installedApk.isEmpty()) {
             System.out.println("Error: no apk installed");
-        }else{
+        } else {
             System.out.println("Uninstalling: " + installedApk + "...");
             this.installedApk = "";
         }
