@@ -72,11 +72,6 @@ abstract public class Oculus extends MetaProducts { //Generalización
             System.out.println("Info: Controller no assigned");
         }
     }
-
-    public boolean isRootDevice() {
-        return rootDevice;
-    }
-
     public void setRootDevice(boolean rootDevice) {
         this.rootDevice = rootDevice;
     }
