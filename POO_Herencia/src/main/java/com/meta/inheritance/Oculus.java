@@ -7,7 +7,6 @@ abstract public class Oculus extends MetaProducts { //Generalización
     private OculusControllers RightController;
     private OculusControllers ControllerSingle;
     private String installedApk;
-
     private boolean rootDevice;
 
     public Oculus(String productModel, String commercialName, String serialNumber) {
