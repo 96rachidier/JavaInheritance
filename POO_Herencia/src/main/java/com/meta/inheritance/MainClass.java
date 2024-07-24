@@ -7,7 +7,7 @@ public class MainClass {
         classIdentify();
     }
 
-    public static void classIdentify(){
+    public static void classIdentify() {
 
         MetaProducts object = new Quest2("12MH22OA");
         Oculus hollywood = (Oculus) object;
@@ -19,14 +19,41 @@ public class MainClass {
         hollywood.printMainClass();
         otherPointer.printMainClass();
         System.out.println(" ");
-        object.libertyScales();
         hollywood.libertyScales();
         otherPointer.libertyScales(); //los métodos de las clases hijas no pueden ser llamados por las clases padre
 
+        /* instanceof*/
+
+        System.out.println(hollywood instanceof Oculus); // output true
+
+        if (hollywood instanceof Oculus) {
+            System.out.println("Hollywood is an instance of Oculus");
+        } else {
+            System.out.println("Not is an instance of Oculus");
+        }
+
+        if (hollywood instanceof Quest) {
+            System.out.println("Hollywood is an instance of MetaProducts");
+        } else {
+            System.out.println("Hollywood not is an instance of Quest");
+        }
+
+        if (object instanceof MetaProducts) {
+            System.out.println("object is an instance of MetaProducts");
+        } else {
+            System.out.println("object not is an instance of MetaProducts");
+        }
+
+        if (otherPointer instanceof MetaProducts) {
+            System.out.println("otherPointer is an instance of MetaProducts");
+        } else {
+            System.out.println("otherPointer not is an instance of MetaProducts");
+        }
+
 //investigar instanceOF
 
-
     }
+
     public static void exerciseIsa() {
 
         Oculus oculusQuest = new Quest("1PSH29443N"); //transformo de clase (código fuente) a objeto (run time)
@@ -69,6 +96,7 @@ public class MainClass {
         System.out.println("Info: Device detected in " + oculusQuest2.getDeveloperMode() + " mode ");
         reboot(oculusQuest2);
     }
+
     public static boolean resetSingleControllers(OculusControllers controller) { //Polimorfismo
         return controller.resetSingleControllers();
     }
@@ -95,6 +123,7 @@ public class MainClass {
         }
         System.out.println(" ");
     }
+
     public static void reboot(MetaProducts product) {
         product.rebootDevice();
         System.out.println("Info: Device in " + product.getDeveloperMode() + " mode");
