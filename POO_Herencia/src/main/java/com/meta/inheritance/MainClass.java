@@ -1,7 +1,33 @@
 package com.meta.inheritance;
 
+//instancia = creación de un objeto en memoria
+//no puedo crear instancias de una abstract class, pero si objetos
 public class MainClass {
     public static void main(String[] args) {
+        classIdentify();
+    }
+
+    public static void classIdentify(){
+
+        MetaProducts object = new Quest2("12MH22OA");
+        Oculus hollywood = (Oculus) object;
+        Quest2 otherPointer = (Quest2) hollywood;
+        System.out.println(hollywood.getSerialNumber() + " This is the hollywood object");
+        System.out.println(object.getSerialNumber() + " This is the object Oculus");
+        System.out.println(otherPointer.getSerialNumber() + " This is the object Quest");
+        object.printMainClass();
+        hollywood.printMainClass();
+        otherPointer.printMainClass();
+        System.out.println(" ");
+        object.libertyScales();
+        hollywood.libertyScales();
+        otherPointer.libertyScales(); //los métodos de las clases hijas no pueden ser llamados por las clases padre
+
+//investigar instanceOF
+
+
+    }
+    public static void exerciseIsa() {
 
         Oculus oculusQuest = new Quest("1PSH29443N"); //transformo de clase (código fuente) a objeto (run time)
         OculusControllers controller = new Controller("LCON", "Left LCON", "1234");
@@ -42,9 +68,7 @@ public class MainClass {
         oculusQuest2.setFastbootMode();
         System.out.println("Info: Device detected in " + oculusQuest2.getDeveloperMode() + " mode ");
         reboot(oculusQuest2);
-
     }
-
     public static boolean resetSingleControllers(OculusControllers controller) { //Polimorfismo
         return controller.resetSingleControllers();
     }

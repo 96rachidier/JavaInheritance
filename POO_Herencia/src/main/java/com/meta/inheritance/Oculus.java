@@ -3,9 +3,9 @@ package com.meta.inheritance;
 abstract public class Oculus extends MetaProducts { //Generalización
 
     private int availableColors;
-    private OculusControllers LeftController;
-    private OculusControllers RightController;
-    private OculusControllers ControllerSingle;
+    private OculusControllers leftController; //usar minúsuculas para nombre de los objetos
+    private OculusControllers rightController;
+    private OculusControllers controllerSingle;
     private String installedApk;
     private boolean rootDevice;
 
@@ -13,6 +13,9 @@ abstract public class Oculus extends MetaProducts { //Generalización
         super(productModel, commercialName, serialNumber);
     }
 
+    public void libertyScales(){
+        System.out.println("There are the liberty scales of the oculus devices");
+    }
     @Override //método que sobrescribe al del padre. Es un aviso para el desarrollador y el compilador
     public void setProductModel(String productModel) {
         super.setProductModel(productModel + " Santi ");
@@ -27,47 +30,47 @@ abstract public class Oculus extends MetaProducts { //Generalización
     }
 
     public OculusControllers getLeftController() {
-        return LeftController;
+        return leftController;
     }
 
     public void setLeftController(OculusControllers controller) {
-        LeftController = controller;
+        leftController = controller;
     }
 
     public OculusControllers getRightController() {
-        return RightController;
+        return rightController;
     }
 
     public void setRightController(OculusControllers controller) {
-        RightController = controller;
+        rightController = controller;
     }
 
     public OculusControllers getControllerSingle() {
-        return ControllerSingle;
+        return controllerSingle;
     }
 
     public void setControllerSingle(OculusControllers controller) {
 
-        ControllerSingle = controller;
+        controllerSingle = controller;
     }
 
     public void printAssignedControllers() {
-        if (LeftController != null) {
-            System.out.println(LeftController.getCommercialName() + " " + LeftController.getSerialNumber());
+        if (leftController != null) {
+            System.out.println(leftController.getCommercialName() + " " + leftController.getSerialNumber());
         } else {
             System.out.println("Info: Left Controller no Assigned");
             return;
         }
-        if (RightController != null) {
-            System.out.println(RightController.getCommercialName() + " " + RightController.getSerialNumber());
+        if (rightController != null) {
+            System.out.println(rightController.getCommercialName() + " " + rightController.getSerialNumber());
         } else {
             System.out.println("Info: Right Controller no assigned");
         }
     }
 
     public void printSingleAssignedController() {
-        if (ControllerSingle != null) {
-            System.out.println(ControllerSingle.getCommercialName() + " " + ControllerSingle.getSerialNumber());
+        if (controllerSingle != null) {
+            System.out.println(controllerSingle.getCommercialName() + " " + controllerSingle.getSerialNumber());
         } else {
             System.out.println("Info: Controller no assigned");
         }

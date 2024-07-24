@@ -10,7 +10,9 @@ abstract class MetaProducts {
         this.commercialName = commercialName;
         this.serialNumber = serialNumber;
     }
-
+    public  void printMainClass(){
+        System.out.println("I was called from MetaProducts");
+    }
     public String getProductModel() {
         return productModel;
     }
